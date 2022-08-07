@@ -14,6 +14,7 @@ import { NewDepartmentComponent } from './components/new-department/new-departme
 import { EmployeesComponent } from './components/employees/employees.component';
 import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     NewDepartmentComponent,
     EmployeesComponent,
     NewEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,10 @@ import { EditDepartmentComponent } from './components/edit-department/edit-depar
 import { EmployeesComponent } from './components/employees/employees.component';
 import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
+  { path: '', component: MenuComponent },
   { path: 'enterprises', component: EnterpriseComponent },
   { path: 'new-enterprise', component: NewEnterpriseComponent },
   { path: 'edit-enterprise/:id', component: EditEnterpriseComponent },

@@ -38,7 +38,7 @@ export class NewEnterpriseComponent implements OnInit {
       (res) => console.log(res),
       (err) => console.log(err)
     );
-    this.router.navigate( [''] );
+    this.router.navigate( ['enterprises'] );
   }
 
 }
