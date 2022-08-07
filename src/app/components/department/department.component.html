@@ -1,0 +1,32 @@
+<h2>Departments</h2>
+
+<div class="d-grip gap-2 mt-4">
+    <a routerLink="/new-department" class="btn btn-primary" type="button">New Department</a>
+</div>
+
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Phone</th>
+            <th>Enterprise</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let d of Departments">
+            <td>{{ d.name }}</td>
+            <td>{{ d.description }}</td>
+            <td>{{ d.phone }}</td>
+            <td>{{ d.enterprise.name }}</td>
+            <td>{{ d.status }}</td>
+            <td>
+                <button routerLink="/edit-department/{{ d.id }}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                <!-- <button (click)="deleteRow(e)" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

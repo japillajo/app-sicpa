@@ -16,13 +16,12 @@ export class EnterpriseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.enterpriseService.getEnterprises().subscribe({
-      next: (res) => this.Enterprises = res,
-      error: (err) => console.log(err),
-      complete: () => console.info('complete')
-    });
+    this.enterpriseService.getEnterprises().then(
+      (res) => this.Enterprises = res,
+      (err) => console.log(err) 
+    );
   }
 
-  deleteRow = (enterprise) => this.enterpriseService.deleteEnterprise(enterprise);
+  //deleteRow = (enterprise) => this.enterpriseService.deleteEnterprise(enterprise);
 
 }

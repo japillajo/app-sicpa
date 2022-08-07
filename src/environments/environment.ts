@@ -6,7 +6,11 @@ export const environment = {
   production: false,
 
   // Enterprises Url
-  enterprisesUrl: 'https://localhost:7285/enterprises'
+  enterprisesUrl: 'https://localhost:7285/enterprises',
+  departmentsUrl: 'https://localhost:7285/departments',
+  employeesUrl: 'https://localhost:7285/employees',
+  departmentemployeesUrl: 'https://localhost:7285/departmentemployees'
+
 };
 
 /*

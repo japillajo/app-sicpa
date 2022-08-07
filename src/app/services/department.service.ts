@@ -1,27 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { Enterprise } from '../models/enterprise.model';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
+import { Department } from '../models/department.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EnterpriseService {
+export class DepartmentService {
 
   url: string;
 
   constructor(
     private http: HttpClient
   ) { 
-    this.url = environment.enterprisesUrl;
+    this.url = environment.departmentsUrl;
   }
 
   // CRUD methods
-  getEnterprises() {
-    const promise = new Promise<Enterprise[]>((resolve, reject) => {
-      this.http.get<Enterprise[]>(this.url).subscribe({
+  getDepartments() {
+    const promise = new Promise<Department[]>((resolve, reject) => {
+      this.http.get<Department[]>(this.url).subscribe({
         next: (res) => {
           resolve(res);
         },
@@ -36,9 +34,9 @@ export class EnterpriseService {
     return promise;
   }
 
-  getEnterpriseById( id ) {
-    const promise = new Promise<Enterprise>((resolve, reject) => {
-      this.http.get<Enterprise>(this.url + '/' + id).subscribe({
+  getDepartmentById( id ) {
+    const promise = new Promise<Department>((resolve, reject) => {
+      this.http.get<Department>(this.url + '/' + id).subscribe({
         next: (res) => {
           resolve(res);
         },
@@ -53,9 +51,9 @@ export class EnterpriseService {
     return promise;
   }
 
-  createEnterprise( enterprise: Enterprise ) {
-    const promise = new Promise<Enterprise>((resolve, reject) => {
-      this.http.post<Enterprise>(this.url, enterprise).subscribe({
+  createDepartment( department: Department ) {
+    const promise = new Promise<Department>((resolve, reject) => {
+      this.http.post<Department>(this.url, department).subscribe({
         next: (res) => {
           resolve(res);
         },
@@ -70,9 +68,9 @@ export class EnterpriseService {
     return promise;
   }
 
-  updateEnterprise( enterprise: Enterprise, id ) {
-    const promise = new Promise<Enterprise>((resolve, reject) => {
-      this.http.put<Enterprise>(this.url + '/' + id, enterprise).subscribe({
+  updateDepartment( department: Department, id ) {
+    const promise = new Promise<Department>((resolve, reject) => {
+      this.http.put<Department>(this.url + '/' + id, department).subscribe({
         next: (res) => {
           resolve(res);
         },
@@ -87,7 +85,7 @@ export class EnterpriseService {
     return promise;
   }
 
-  deleteEnterprise( enterprise: Enterprise ) {
+  deleteDepartment( department: Department ) {
 
   }
 }

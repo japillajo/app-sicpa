@@ -1,0 +1,35 @@
+<h2>Edit Employee</h2>
+
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input formControlName="name" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Surname</label>
+        <input formControlName="surname" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input formControlName="position" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Age</label>
+        <input formControlName="age" type="text" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input formControlName="status" type="checkbox" class="form-control form-check-input">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select formControlName="departmentId" class="form-control" required>
+            <option *ngFor="let d of Departments" value="{{ d.id }}">{{ d.name }}</option>
+        </select>
+    </div>
+    <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary">Update</button>
+</form>

@@ -10,6 +10,7 @@
             <th>Name</th>
             <th>Address</th>
             <th>Phone</th>
+            <th>Status</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -19,9 +20,10 @@
             <td>{{ e.name }}</td>
             <td>{{ e.address }}</td>
             <td>{{ e.phone }}</td>
+            <td>{{ e.status }}</td>
             <td>
-                <button routerLink="/edit-component/{{ e.id }}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
-                <button (click)="deleteRow(e)" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+                <button routerLink="/edit-enterprise/{{ e.id }}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+                <!-- <button (click)="deleteRow(e)" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button> -->
             </td>
         </tr>
     </tbody>
